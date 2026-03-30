@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/test-results
 
 # next.js
 /.next/
@@ -35,6 +36,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# local reference copy (not part of this app)
+/node.js wp vercel sanity master/
 
 # typescript
 *.tsbuildinfo

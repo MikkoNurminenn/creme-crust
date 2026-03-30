@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Creme Crust Web
 
-## Getting Started
+Bilingual Next.js brand site for Creme Crust.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Instagram live feed
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The homepage supports a server-side Instagram feed that can show the 3 latest posts.
 
-## Learn More
+Add these environment variables locally and in Vercel:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+INSTAGRAM_GRAPH_USER_ID=
+INSTAGRAM_GRAPH_ACCESS_TOKEN=
+INSTAGRAM_GRAPH_API_VERSION=v21.0
+INSTAGRAM_FEED_REVALIDATE_SECONDS=300
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Notes:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `INSTAGRAM_GRAPH_USER_ID` should be the Instagram professional account user ID used by the Meta API.
+- `INSTAGRAM_GRAPH_ACCESS_TOKEN` should be a valid Meta access token with Instagram media-read access for that account.
+- `INSTAGRAM_FEED_REVALIDATE_SECONDS=300` means the feed refreshes roughly every 5 minutes.
+- If the Meta keys are missing, the site falls back to mirrored local Instagram cards so the section still looks intentional.
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+vercel deploy --prod -y
+```
