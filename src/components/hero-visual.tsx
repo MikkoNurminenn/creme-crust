@@ -90,15 +90,15 @@ export function HeroVisual({ locale }: HeroVisualProps) {
         <span>{marks.batch}</span>
       </motion.div>
       <motion.div
-        className="absolute left-[6%] top-[55%] z-20 hidden w-[17rem] -translate-y-1/2 -rotate-[7deg] rounded-[1.5rem] border border-white/65 bg-[linear-gradient(160deg,rgba(255,251,247,0.94),rgba(244,227,218,0.92))] px-4 py-3.5 shadow-[0_18px_38px_rgba(64,39,31,0.12)] md:block"
+        className="absolute left-[6%] top-[55%] z-20 hidden w-fit max-w-[calc(100%-2.5rem)] -translate-y-1/2 -rotate-[7deg] rounded-[1.1rem] border border-white/65 bg-[linear-gradient(160deg,rgba(255,251,247,0.94),rgba(244,227,218,0.92))] px-2.5 py-2 shadow-[0_14px_32px_rgba(64,39,31,0.1)] md:flex md:flex-col md:items-start"
         initial={prefersReduced ? false : { opacity: 0, scale: 0.94, rotate: -12 }}
         animate={prefersReduced ? undefined : { opacity: 1, scale: 1, rotate: -7 }}
         transition={prefersReduced ? undefined : { duration: 0.7, delay: 0.28 }}
       >
-        <p className="text-[0.58rem] font-semibold uppercase tracking-[0.26em] text-[var(--color-accent-strong)]">
+        <p className="whitespace-nowrap text-[0.55rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent-strong)]">
           {marks.ribbon}
         </p>
-        <p className="accent-script mt-2.5 max-w-[9ch] text-[1.85rem] leading-[0.84] text-[var(--color-cocoa)]">
+        <p className="accent-script mt-1.5 whitespace-nowrap text-[1.4rem] leading-[0.9] text-[var(--color-cocoa)]">
           {marks.note}
         </p>
       </motion.div>
