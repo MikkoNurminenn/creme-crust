@@ -88,8 +88,7 @@ export const msContent: SiteContent = {
       },
     ],
     storyTitle: "Batch terhad, bungkusan dijaga",
-    storyBody:
-      "Kami kekalkan batch kecil supaya segar dan kemas. Kotak dibungkus supaya sampai rumah masih kemas.",
+    storyBody: "Batch kecil, bungkusan dijaga.",
     processTitle: "Cara ia berjalan",
     process: [
       {

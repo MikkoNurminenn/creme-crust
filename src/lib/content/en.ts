@@ -88,8 +88,7 @@ export const enContent: SiteContent = {
       },
     ],
     storyTitle: "Limited runs, careful packing",
-    storyBody:
-      "We keep batches small so everything stays fresh and finished properly. Boxes are packed so they travel home neatly.",
+    storyBody: "Small batches, packed with care.",
     processTitle: "How it works",
     process: [
       {
