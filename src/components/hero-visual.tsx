@@ -30,8 +30,7 @@ export function HeroVisual({ locale }: HeroVisualProps) {
   const prefersReduced = useReducedMotion();
 
   return (
-    <div className="relative min-h-[430px] w-full overflow-hidden rounded-[2.4rem] border border-white/45 bg-[linear-gradient(160deg,rgba(255,249,245,0.98),rgba(244,225,218,0.85)_44%,rgba(160,114,134,0.16)_100%)] p-5 shadow-[0_32px_90px_rgba(75,49,36,0.14)] md:min-h-[640px] md:rounded-[2.7rem] md:p-10 md:shadow-[0_44px_120px_rgba(75,49,36,0.16)]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.88),transparent_42%),radial-gradient(circle_at_18%_28%,rgba(255,255,255,0.92),transparent_18%),radial-gradient(circle_at_70%_35%,rgba(242,216,207,0.82),transparent_18%),radial-gradient(circle_at_50%_88%,rgba(174,186,160,0.18),transparent_30%)]" />
+    <div className="relative min-h-[430px] w-full overflow-hidden rounded-[2.4rem] border border-white/45 bg-[linear-gradient(160deg,rgba(255,250,246,0.98),rgba(243,226,218,0.75))] p-5 shadow-[0_24px_64px_rgba(75,49,36,0.09)] md:min-h-[640px] md:rounded-[2.7rem] md:p-10">
       <div className="absolute inset-x-6 top-16 bottom-22 z-[1] grid grid-cols-[0.84fr_1.04fr] gap-3 md:inset-x-10 md:top-22 md:bottom-30 md:gap-5">
         <div className="grid grid-rows-[0.94fr_1.06fr] gap-3 md:gap-5">
           <motion.div

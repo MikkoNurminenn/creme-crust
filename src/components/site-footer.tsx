@@ -22,7 +22,7 @@ export function SiteFooter({
 }: SiteFooterProps) {
   return (
     <footer className="border-t border-[color:var(--color-stroke)] bg-[rgba(255,247,238,0.8)]">
-      <div className="mx-auto flex w-[min(1180px,calc(100%-2rem))] flex-col gap-7 py-8 md:flex-row md:items-end md:justify-between md:gap-8 md:py-10">
+      <div className="mx-auto flex w-[min(1180px,calc(100%-2rem))] flex-col gap-8 py-14 md:flex-row md:items-end md:justify-between md:gap-10 md:py-20">
         <div className="max-w-xl">
           <p className="font-display text-3xl text-[var(--color-cocoa)]">{brand}</p>
           <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">{note}</p>

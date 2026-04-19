@@ -74,20 +74,19 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
   return (
     <>
       <section className="hero-shell">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.86),transparent_42%),radial-gradient(circle_at_80%_20%,rgba(255,225,200,0.7),transparent_25%),linear-gradient(180deg,rgba(255,247,238,0.3),rgba(255,247,238,0))]" />
-        <div className="section-shell relative grid min-h-[calc(100svh-2rem)] items-center gap-8 pb-10 pt-28 md:min-h-[calc(100svh-3rem)] md:grid-cols-[0.92fr_1.08fr] md:gap-12 md:pb-16 md:pt-40">
+        <div className="section-shell relative grid min-h-[calc(100svh-2rem)] items-center gap-8 pb-16 pt-36 md:min-h-[calc(100svh-3rem)] md:grid-cols-[0.92fr_1.08fr] md:gap-16 md:pb-24 md:pt-52">
           <Reveal className="max-w-xl">
             <p className="eyebrow">{content.home.eyebrow}</p>
-            <h1 className="display-title mt-4 text-[clamp(3rem,18vw,7rem)]">
+            <h1 className="display-title mt-6 text-[clamp(3rem,18vw,7rem)]">
               {content.site.name}
             </h1>
-            <p className="mt-4 max-w-lg text-[clamp(1.15rem,7vw,2.2rem)] leading-[1.04] tracking-[-0.03em] text-[var(--color-cocoa)] md:mt-5">
+            <p className="mt-6 max-w-lg text-[clamp(1.15rem,7vw,2.2rem)] leading-[1.04] tracking-[-0.03em] text-[var(--color-cocoa)] md:mt-7">
               {content.home.title}
             </p>
-            <p className="mt-5 max-w-xl text-[0.98rem] leading-7 text-[var(--color-muted)] md:mt-6 md:text-lg md:leading-8">
+            <p className="mt-6 max-w-xl text-[0.98rem] leading-7 text-[var(--color-muted)] md:mt-7 md:text-lg md:leading-8">
               {content.home.description}
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:mt-10">
+            <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:mt-14">
               <ButtonLink href={orderHref}>{content.home.primaryCta}</ButtonLink>
               <ButtonLink
                 external
@@ -98,7 +97,7 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
               </ButtonLink>
             </div>
             <NextDropPanel
-              className="mt-6"
+              className="mt-8"
               locale={locale}
               label={content.site.nextDrop.label}
               opensAt={content.site.nextDrop.opensAt}
@@ -113,7 +112,7 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
               reminderLabel={content.site.nextDrop.reminderLabel}
               reminderHref={content.site.instagramUrl}
             />
-            <div className="mt-8 space-y-3 border-t border-[color:var(--color-stroke)] pt-5 md:mt-10 md:pt-6">
+            <div className="mt-12 space-y-5 border-t border-[color:var(--color-stroke)] pt-8 md:mt-14 md:pt-10">
               {content.home.proof.map((item) => (
                 <p
                   key={item}
@@ -131,66 +130,65 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
         </div>
       </section>
 
-      <section className="section-shell py-16 md:py-28">
-        <div className="home-chapter home-chapter--soft">
-          <Reveal className="max-w-[68rem]">
-            <div className="hidden md:block">
-              <p className="eyebrow">{content.home.signaturesTitle}</p>
-              <div className="mt-5 grid items-end gap-6 md:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] md:gap-10">
-                <h2 className="font-display text-[clamp(3rem,5.2vw,5.25rem)] leading-[0.9] tracking-[-0.05em] text-[var(--color-cocoa)]">
-                  {content.home.signaturesTitle}
-                </h2>
-                <p className="max-w-[44rem] text-[clamp(1.55rem,2.4vw,2.85rem)] leading-[1.02] tracking-[-0.045em] text-[var(--color-cocoa)]">
-                  {content.home.signaturesIntro}
-                </p>
-              </div>
-            </div>
-            <div className="md:hidden">
-              <h2 className="mt-4">
-                <span className="release-lines-mobile-title">
-                  {content.home.signaturesTitle}
-                </span>
+      <section className="section-shell border-t border-[color:var(--color-stroke)] py-28 md:py-48">
+        <Reveal className="max-w-[68rem]">
+          <div className="hidden md:block">
+            <p className="eyebrow">{content.home.signaturesTitle}</p>
+            <div className="mt-6 grid items-end gap-6 md:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] md:gap-12">
+              <h2 className="font-display text-[clamp(3rem,5.2vw,5.25rem)] leading-[0.9] tracking-[-0.05em] text-[var(--color-cocoa)]">
+                {content.home.signaturesTitle}
               </h2>
-              <p className="release-lines-mobile-body">
-                {content.home.signaturesMobileIntro}
+              <p className="max-w-[44rem] text-[clamp(1.55rem,2.4vw,2.85rem)] leading-[1.1] tracking-[-0.04em] text-[var(--color-cocoa)]">
+                {content.home.signaturesIntro}
               </p>
-              <div className="release-lines-mobile-tags">
-                {content.home.signatures.map((signature) => (
-                  <span key={signature.title} className="release-lines-mobile-tag">
-                    {signature.title}
-                  </span>
-                ))}
-              </div>
             </div>
-          </Reveal>
-          <div className="md:mt-12">
-            {content.home.signatures.map((signature, index) => (
-              <Reveal
-                key={signature.title}
-                delay={index * 0.08}
-                className="signature-row"
-              >
-                <div className="signature-index">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-                <div>
-                  <p className="signature-title font-display text-[2.8rem] text-[var(--color-cocoa)] md:text-5xl">
-                    {signature.title}
-                  </p>
-                  <p className="mt-2 text-sm uppercase tracking-[0.26em] text-[var(--color-accent)]">
-                    {signature.subtitle}
-                  </p>
-                </div>
-                <p className="signature-description max-w-xl text-[0.98rem] leading-7 text-[var(--color-muted)] md:text-lg md:leading-8">
-                  {signature.description}
-                </p>
-              </Reveal>
-            ))}
           </div>
+          <div className="md:hidden">
+            <p className="eyebrow">{content.home.signaturesTitle}</p>
+            <h2 className="mt-5">
+              <span className="release-lines-mobile-title">
+                {content.home.signaturesTitle}
+              </span>
+            </h2>
+            <p className="release-lines-mobile-body mt-4">
+              {content.home.signaturesMobileIntro}
+            </p>
+            <div className="release-lines-mobile-tags mt-5">
+              {content.home.signatures.map((signature) => (
+                <span key={signature.title} className="release-lines-mobile-tag">
+                  {signature.title}
+                </span>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+        <div className="mt-12 md:mt-20">
+          {content.home.signatures.map((signature, index) => (
+            <Reveal
+              key={signature.title}
+              delay={index * 0.08}
+              className="signature-row"
+            >
+              <div className="signature-index">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+              <div>
+                <p className="signature-title font-display text-[2.8rem] text-[var(--color-cocoa)] md:text-5xl">
+                  {signature.title}
+                </p>
+                <p className="mt-3 text-sm uppercase tracking-[0.26em] text-[var(--color-accent)]">
+                  {signature.subtitle}
+                </p>
+              </div>
+              <p className="signature-description max-w-xl text-[0.98rem] leading-7 text-[var(--color-muted)] md:text-lg md:leading-8">
+                {signature.description}
+              </p>
+            </Reveal>
+          ))}
         </div>
       </section>
 
-      <section className="section-shell border-t border-[color:var(--color-stroke)] py-16 md:py-28">
+      <section className="section-shell border-t border-[color:var(--color-stroke)] py-28 md:py-48">
         <BrandGallery
           locale={locale}
           eyebrow={galleryCopy.eyebrow}
@@ -199,7 +197,7 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
         />
       </section>
 
-      <section className="section-shell pb-16 md:pb-28">
+      <section className="section-shell pb-28 md:pb-48">
         <InstagramLiveFeed
           locale={locale}
           handle={content.site.handle}
@@ -207,45 +205,43 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
         />
       </section>
 
-      <section className="section-shell home-story-process py-16 md:grid md:grid-cols-[0.84fr_0.68fr_1fr] md:gap-12 md:border-y md:border-[color:var(--color-stroke)] md:py-28">
-        <div className="home-chapter home-chapter--plain md:contents">
-          <Reveal className="home-story-copy max-w-lg">
-            <p className="eyebrow">{content.home.storyTitle}</p>
-            <h2 className="section-title mt-4 max-w-none text-[clamp(2.9rem,4.7vw,4.6rem)]">
-              {content.home.storyBody}
-            </h2>
-          </Reveal>
-          <Reveal delay={0.05} className="home-story-media grid gap-4 md:pt-1">
-            {storyImages.map((image) => (
-              <article
-                key={image.id}
-                className="group relative overflow-hidden rounded-[2rem] border border-white/55 bg-white/55 shadow-[0_22px_60px_rgba(61,37,24,0.08)]"
-              >
-                <div className="relative aspect-[4/5]">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover transition duration-700 group-hover:scale-[1.04]"
-                    sizes="(max-width: 768px) 92vw, 20vw"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,248,241,0.02),rgba(61,37,24,0.42))]" />
-                </div>
-                <div className="absolute inset-x-4 bottom-4 rounded-[1.4rem] border border-white/30 bg-[rgba(255,250,245,0.18)] px-4 py-3 backdrop-blur-md">
-                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-white/80">
-                    {image.tag}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </Reveal>
-        </div>
-        <Reveal delay={0.08} className="home-chapter home-chapter--warm home-process-panel md:grid md:gap-6">
+      <section className="section-shell home-story-process border-t border-[color:var(--color-stroke)] py-28 md:grid md:grid-cols-[0.84fr_0.68fr_1fr] md:gap-16 md:py-48">
+        <Reveal className="home-story-copy max-w-lg">
+          <p className="eyebrow">{content.home.storyTitle}</p>
+          <h2 className="section-title mt-6 max-w-none text-[clamp(2.9rem,4.7vw,4.6rem)]">
+            {content.home.storyBody}
+          </h2>
+        </Reveal>
+        <Reveal delay={0.05} className="home-story-media grid gap-4 md:pt-1">
+          {storyImages.map((image) => (
+            <article
+              key={image.id}
+              className="group relative overflow-hidden rounded-[2rem] border border-white/55 bg-white/55 shadow-[0_16px_40px_rgba(61,37,24,0.06)]"
+            >
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover transition duration-700 group-hover:scale-[1.04]"
+                  sizes="(max-width: 768px) 92vw, 20vw"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,248,241,0.02),rgba(61,37,24,0.38))]" />
+              </div>
+              <div className="absolute inset-x-4 bottom-4 rounded-[1.4rem] border border-white/30 bg-[rgba(255,250,245,0.18)] px-4 py-3 backdrop-blur-md">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-white/80">
+                  {image.tag}
+                </p>
+              </div>
+            </article>
+          ))}
+        </Reveal>
+        <Reveal delay={0.08} className="home-process-panel md:grid md:gap-4">
           <p className="eyebrow">{content.home.processTitle}</p>
           {content.home.process.map((step, index) => (
             <div
               key={step.title}
-              className="home-process-step grid gap-2 border-t border-[color:var(--color-stroke)] py-5 md:grid-cols-[120px_1fr]"
+              className="home-process-step grid gap-2 border-t border-[color:var(--color-stroke)] md:grid-cols-[120px_1fr]"
             >
               <div className="text-[0.72rem] font-semibold uppercase tracking-[0.26em] text-[var(--color-muted)]">
                 {String(index + 1).padStart(2, "0")}
@@ -254,7 +250,7 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
                 <p className="process-step-title font-display text-3xl text-[var(--color-cocoa)]">
                   {step.title}
                 </p>
-                <p className="process-step-description mt-2 text-[0.98rem] leading-7 text-[var(--color-muted)] md:text-base md:leading-8">
+                <p className="process-step-description mt-3 text-[0.98rem] leading-7 text-[var(--color-muted)] md:text-base md:leading-8">
                   {step.description}
                 </p>
               </div>
@@ -263,8 +259,8 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
         </Reveal>
       </section>
 
-      <section className="section-shell py-16 md:py-28">
-        <Reveal className="cta-band cta-band--home-final">
+      <section className="section-shell py-28 md:py-48">
+        <Reveal className="cta-band">
           <p className="eyebrow">{content.site.availability}</p>
           <h2 className="section-title mt-4">{content.home.finalTitle}</h2>
           <p className="mt-5 max-w-2xl text-[0.98rem] leading-7 text-[var(--color-muted)] md:text-lg md:leading-8">
